@@ -11,6 +11,7 @@ mw_telemetry_settings.ecommerce_configurations.forEach((configuration) => {
 			const initializeInterval = setInterval(() => {
 				if (typeof set_mw_trigger !== "undefined") {
 					set_mw_trigger(trigger, () => {
+						console.log(trigger);
 						triggerMWEcommerceEvent(configuration);
 					});
 					clearInterval(initializeInterval);
