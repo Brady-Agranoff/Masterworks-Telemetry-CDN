@@ -154,7 +154,11 @@ function set_mw_trigger(trigger, callback) {
 		if (!trigger.urls.every((url) => typeof url === "string")) {
 			throw new MasterworksTelemetryError("Invalid trigger.urls: " + trigger.urls);
 		}
-
+		console.log(trigger.urls);
+		for (let i = 0; i < trigger.urls.length; i++) {
+			console.log(trigger.urls[i]);
+			console.log(matches_current_url(trigger.urls[i]));
+		}
 		if (!trigger.urls.some((url) => matches_current_url(url))) {
 			return;
 		}
